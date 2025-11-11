@@ -1,21 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import FirstComponent from './components/FirstComponent'
-import AnotherCompoonents from './components/AnotherCompoonents'
+import { useState, useEffect } from  'react'
+import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from 'react-icons/bs'
 import './App.css'
+const API = "http://localhost:5000";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [title, setTitle] = useState("")
+  const [time, SetTime] = useState("")
+  const [todos, setTodos] = useState([])
+  const [loading, setLoading] = useState(false);
+
 
   return (
     <>
-      <div> 
+      <div className='App'> 
+    <div className='todo-header'> 
+      <h1>React Todo</h1>
 
-       <h2>Hello React!</h2>
-       <FirstComponent></FirstComponent>
-       <AnotherCompoonents></AnotherCompoonents>
-       
+
+    </div>
+    <div className='form-todo'>
+      <p>Formulário</p>
+    </div>
+      <div className='list-todo'>
+        <p>Lista</p>
+      </div>
+
        </div>
     </>
   )
