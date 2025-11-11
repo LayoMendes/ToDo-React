@@ -9,6 +9,8 @@ function App() {
   const [time, SetTime] = useState("")
   const [todos, setTodos] = useState([])
   const [loading, setLoading] = useState(false);
+  const handleSubmit = (e) => {};
+  
 
 
   return (
@@ -20,10 +22,13 @@ function App() {
 
     </div>
     <div className='form-todo'>
-      <p>Formulário</p>
+      <h2>Insira sua próxima tarefa: </h2>
+      <form onSubmit={handleSubmit}>
     </div>
       <div className='list-todo'>
-        <p>Lista</p>
+        <h2>Lista de tarefas: </h2>
+        {todos.lenght === 0 && <p> Não há tarefas</p>}
+
       </div>
 
        </div>
